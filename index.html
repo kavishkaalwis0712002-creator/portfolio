@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavishka Alwis | Hardware, Embedded & Mechatronics Portfolio</title>
+    <!-- Google Fonts & Font Awesome CDN with Referrer Security -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+         :root {
+            --bg-base: #0a0d14;
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --card-border: rgba(56, 189, 248, 0.15);
+            --accent-cyan: #38bdf8;
+            --accent-blue: #6366f1;
+            --accent-green: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --block-bg: #0f172a;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: var(--bg-base);
+            background-image: radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.08) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+        
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+        /* Hero Header */
+        
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-green);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 25px;
+            font-weight: 400;
+        }
+        
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(8px);
+            font-family: inherit;
+        }
+        
+        .btn:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+        /* Education & Academic Grid */
+        
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 30px 0 50px;
+        }
+        
+        .edu-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 3px solid var(--accent-cyan);
+        }
+        
+        .edu-card h4 {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .edu-card .inst {
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            margin-bottom: 6px;
+        }
+        
+        .edu-card .details {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        /* Skills Matrix */
+        
+        .skills-container {
+            margin: 20px 0 60px;
+            text-align: center;
+        }
+        
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .skill-pill {
+            display: inline-block;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            margin: 4px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        
+        .skill-pill:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+        /* Section Headings */
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+        
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--card-border), transparent);
+        }
+        /* Project Cards */
+        
+        .case-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 32px;
+            margin-bottom: 45px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s ease;
+        }
+        
+        .case-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .card-top h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .domain-tag {
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: 'Fira Code', monospace;
+        }
+        /* 4-Column Grid */
+        
+        .deep-dive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .deep-dive-grid {
+                grid-template-columns: 1fr;
+            }
+            .project-gallery {
+                grid-template-columns: 1fr !important;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        .dive-box {
+            background: var(--block-bg);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-cyan);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        .dive-box.blue {
+            border-left-color: var(--accent-blue);
+        }
+        
+        .dive-box.green {
+            border-left-color: var(--accent-green);
+        }
+        
+        .dive-box h4 {
+            font-size: 0.88rem;
+            color: var(--accent-cyan);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .dive-box.blue h4 {
+            color: #818cf8;
+        }
+        
+        .dive-box.green h4 {
+            color: var(--accent-green);
+        }
+        
+        .dive-box p {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            line-height: 1.55;
+        }
+        /* Tech Flow Strip for non-image projects */
+        
+        .tech-flow-strip {
+            background: #090d16;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 18px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        
+        .flow-step {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+        }
+        
+        .flow-arrow {
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+        }
+        /* Metrics Display */
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            background: #090d16;
+            padding: 14px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .metric-cell {
+            text-align: left;
+        }
+        
+        .metric-value {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .metric-title {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Hero Header -->
+        <header>
+            <div class="status-badge">
+                <span class="status-dot"></span> Open to Engineering Internship Opportunities
+            </div>
+            <h1>Kavishka Alwis</h1>
+            <p class="subtitle">Electronics & IoT Undergraduate | Autodesk Fusion 360 CAD | TinyML & Long-Range Telemetry Systems</p>
+
+            <!-- Secure Dynamic Trigger Buttons -->
+            <div class="social-bar">
+                <button onclick="handleSecureEmail()" class="btn">
+                    <i class="fa-solid fa-envelope"></i> Email Me
+                </button>
+                <button onclick="handleSecurePhone()" class="btn">
+                    <i class="fa-solid fa-phone"></i> Contact
+                </button>
+                <a href="https://www.linkedin.com/in/kavishka-alwis" target="_blank" rel="noopener noreferrer" class="btn">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </header>
+
+        <!-- Academic & Certifications Summary -->
+        <div class="edu-grid">
+            <div class="edu-card">
+                <h4>B.Sc. (Joint Major) Electronics & Mathematics with Statistics</h4>
+                <div class="inst">Wayamba University of Sri Lanka (2022 - Present)[cite: 1]</div>
+                <div class="details">Digital Electronics, Microcontroller Technology, Power Electronics, Communication Theory, Optimization & Operations Research.[cite: 1]</div>
+            </div>
+            <div class="edu-card" style="border-left-color: var(--accent-blue);">
+                <h4>Bachelor of Information Technology (BIT)</h4>
+                <div class="inst">University of Colombo (2024 - Present)[cite: 1]</div>
+                <div class="details">Web Application Development, Data Structures & Algorithms, Object-Oriented Analysis & Design, Database Systems.[cite: 1]</div>
+            </div>
+            <div class="edu-card" style="border-left-color: var(--accent-green);">
+                <h4>Certificate in Industrial Engineering & Process Excellence</h4>
+                <div class="inst">Apex Institute of Management Services (2024 - 2025)[cite: 1]</div>
+                <div class="details">Work Study, BOM Preparation, Standard Time Metrics, Quality Control, Line Optimization & Process Improvement.[cite: 1]</div>
+            </div>
+        </div>
+
+        <!-- Technical Arsenal -->
+        <section class="skills-container">
+            <div class="section-label">Core Technical Stack</div>
+            <div>
+                <span class="skill-pill"><i class="fa-solid fa-cube"></i> Autodesk Fusion 360</span>
+                <span class="skill-pill"><i class="fa-solid fa-microchip"></i> ESP32 / ESP32-C3</span>
+                <span class="skill-pill"><i class="fa-solid fa-brain"></i> TinyML & Edge Impulse</span>
+                <span class="skill-pill"><i class="fa-solid fa-tower-broadcast"></i> LoRa Telemetry (SX1278)</span>
+                <span class="skill-pill"><i class="fa-solid fa-print"></i> Rapid 3D Prototyping (FDM)</span>
+                <span class="skill-pill"><i class="fa-solid fa-wave-square"></i> MPU6050 & Vibration DSP</span>
+                <span class="skill-pill"><i class="fa-solid fa-code"></i> C/C++ & Python (Serial)</span>
+                <span class="skill-pill"><i class="fa-solid fa-ruler-combined"></i> GD&T & Fit Clearances</span>
+            </div>
+        </section>
+
+        <!-- Project Section Header -->
+        <div class="section-header">
+            <h2>Featured Engineering Case Studies</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <!-- Case Study 1: Landslide Telemetry (WITH 2 REAL PHOTOS) -->
+        <div class="case-card">
+            <div class="card-top">
+                <h3>IoT Landslide Early Warning & Telemetry System</h3>
+                <span class="domain-tag">Research & Embedded Telemetry</span>
+            </div>
+
+            <div class="deep-dive-grid">
+                <div class="dive-box">
+                    <h4>1. Problem & Innovation</h4>
+                    <p>Engineered a slope monitoring system that prevents false alarms by isolating ambient surface noise (heavy rainfall) from genuine subsurface ground shear displacement.</p>
+                </div>
+                <div class="dive-box blue">
+                    <h4>2. Mechanical Coupling & Dampening</h4>
+                    <p>Coupled an MPU6050 6-axis IMU to a 0.5m subsurface probe, attenuating superficial noise to 0.08g while maintaining high sensitivity to deep shear (0.58g).</p>
+                </div>
+                <div class="dive-box">
+                    <h4>3. Signal Processing & State Engine</h4>
+                    <p>Implemented rolling Acc_RMS calculations (50 Hz) on dual ESP32 nodes to isolate static gravity vectors and classify real-time risk tiers (SAFE &rarr; CAUTION &rarr; RED ALERT).</p>
+                </div>
+                <div class="dive-box blue">
+                    <h4>4. Off-Grid Telemetry & Dashboard</h4>
+                    <p>Integrated 433 MHz LoRa (SX1278) for long-range node-to-base telemetry, combined with local OLED/buzzer alerts and real-time REST API web dashboards.</p>
+                </div>
+            </div>
+
+            <!-- Photos Grid -->
+            <div class="project-gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 24px 0;">
+                <div style="background: #090d16; border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 10px; overflow: hidden;">
+                    <img src="landslide_field_test.jpeg" alt="Field Prototype" style="width: 100%; height: auto; max-height: 320px; object-fit: contain; background: #000; border-radius: 6px; display: block;">
+                    <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; text-align: center; font-family: 'Fira Code', monospace;">
+                        <i class="fa-solid fa-microchip"></i> Physical Field Prototype: Subsurface Probe & OLED Node
+                    </p>
+                </div>
+                <div style="background: #090d16; border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 10px; overflow: hidden;">
+                    <img src="landslide_telemetry_dashboard.jpeg" alt="Web Dashboard" style="width: 100%; height: auto; max-height: 320px; object-fit: contain; background: #000; border-radius: 6px; display: block;">
+                    <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; text-align: center; font-family: 'Fira Code', monospace;">
+                        <i class="fa-solid fa-chart-line"></i> Live Web Dashboard: Multi-Tier Decision Alert Engine
+                    </p>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-cell">
+                    <div class="metric-value">98.15%</div>
+                    <div class="metric-title">Accuracy Rate</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">420 ms</div>
+                    <div class="metric-title">End-to-End Latency</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">SX1278 LoRa</div>
+                    <div class="metric-title">433 MHz Telemetry</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">0 Alarms</div>
+                    <div class="metric-title">False Panic Events</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Study 2: Parametric CAD & 3D Prototyping (WITH REAL FUSION IMAGE) -->
+        <div class="case-card">
+            <div class="card-top">
+                <h3>Parametric Enclosures & Precision Prototyping</h3>
+                <span class="domain-tag">Fusion 360 & DFM</span>
+            </div>
+
+            <div class="deep-dive-grid">
+                <div class="dive-box green">
+                    <h4>1. Design Intent & Requirements</h4>
+                    <p>Engineered parametric component housings and precision mounting brackets in Fusion 360 for electro-mechanical hardware assemblies.</p>
+                </div>
+                <div class="dive-box">
+                    <h4>2. Tolerances & Fastener Geometry</h4>
+                    <p>Designed internal threaded bosses, mounting posts, and interlocking joints with strict 0.25mm manufacturing clearances for zero-play assembly.</p>
+                </div>
+                <div class="dive-box green">
+                    <h4>3. FDM 3D Printing Optimization</h4>
+                    <p>Optimized slicing parameters (print orientation, infill density, wall line thickness) to eliminate layer shear under mechanical fastening torque.</p>
+                </div>
+                <div class="dive-box">
+                    <h4>4. CAD vs. Physical Verification</h4>
+                    <p>Performed physical fit checks and dimensional validation against 3D CAD dimensions, confirming flush alignment and secure component locking.</p>
+                </div>
+            </div>
+
+            <!-- Fusion CAD & Print Image -->
+            <div style="background: #090d16; border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 12px; margin: 22px 0; overflow: hidden;">
+                <img src="fusion_cad_prototype.jpeg" alt="Autodesk Fusion 360 CAD Model and Physical 3D Printed Part" style="width: 100%; height: auto; max-height: 480px; object-fit: contain; background: #000; border-radius: 6px; display: block; margin: 0 auto;">
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 10px; text-align: center; font-family: 'Fira Code', monospace;">
+                    <i class="fa-solid fa-cube"></i> Autodesk Fusion 360 Parametric Model vs. Precision 3D Printed Physical Prototype
+                </p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-cell">
+                    <div class="metric-value">Fusion 360</div>
+                    <div class="metric-title">CAD Tool</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">0.25 mm</div>
+                    <div class="metric-title">Assembly Clearance</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">FDM / PLA+</div>
+                    <div class="metric-title">Prototyping Method</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">Threaded Boss</div>
+                    <div class="metric-title">Mechanical Fastening</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Study 3: TinyML Vibration Detection (Clean Tech Flow Strip) -->
+        <div class="case-card">
+            <div class="card-top">
+                <h3>Edge AI Vibration Anomaly Detection System</h3>
+                <span class="domain-tag">TinyML & Predictive Maintenance</span>
+            </div>
+
+            <div class="deep-dive-grid">
+                <div class="dive-box green">
+                    <h4>1. Overview & System Goal</h4>
+                    <p>Engineered an on-device predictive maintenance solution using ESP32 and MPU6050 IMU to detect abnormal mechanical vibrations in machinery in real time.</p>
+                </div>
+                <div class="dive-box">
+                    <h4>2. Data Pipeline & Spectral Features</h4>
+                    <p>Streamed raw tri-axial accelerometer data over I2C to ESP32. Extracted frequency-domain spectral features using custom Python serial acquisition scripts.</p>
+                </div>
+                <div class="dive-box green">
+                    <h4>3. TinyML On-Chip Inferencing</h4>
+                    <p>Trained a K-Means Anomaly Detection model via Edge Impulse. Deployed optimized C++ inferencing firmware directly onto ESP32 to compute anomaly scores locally.</p>
+                </div>
+                <div class="dive-box">
+                    <h4>4. Structural Mounting Rigidity</h4>
+                    <p>Designed a rigid, low-resonance sensor mount to ensure uncompromised vibration transmission from machinery directly into the IMU sensing plane.</p>
+                </div>
+            </div>
+
+            <div class="tech-flow-strip">
+                <span class="flow-step"><i class="fa-solid fa-wave-square" style="color: var(--accent-cyan);"></i> MPU6050 (I2C)</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step"><i class="fa-brands fa-python" style="color: #fbbf24;"></i> Python Feature DSP</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step"><i class="fa-solid fa-brain" style="color: #a855f7;"></i> Edge Impulse K-Means</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step"><i class="fa-solid fa-microchip" style="color: var(--accent-green);"></i> ESP32 C++ Inferencing</span>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-cell">
+                    <div class="metric-value">On-Chip C++</div>
+                    <div class="metric-title">Edge Inferencing</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">MPU6050</div>
+                    <div class="metric-title">Tri-Axial IMU</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">K-Means</div>
+                    <div class="metric-title">Anomaly Classifier</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">0 ms Delay</div>
+                    <div class="metric-title">100% Offline Edge</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Study 4: Smart Acoustic Lamp (Clean Tech Flow Strip) -->
+        <div class="case-card">
+            <div class="card-top">
+                <h3>Smart Multi-Mode Acoustic Ambient Lamp</h3>
+                <span class="domain-tag">Consumer IoT & Audio DSP</span>
+            </div>
+
+            <div class="deep-dive-grid">
+                <div class="dive-box">
+                    <h4>1. Architecture & State Machines</h4>
+                    <p>Designed a standalone smart lighting system in C++ featuring non-blocking dynamic state machines supporting 5 operational modes with capacitive touch edge detection.</p>
+                </div>
+                <div class="dive-box blue">
+                    <h4>2. Acoustic DSP & Auto-Calibration</h4>
+                    <p>Implemented a dynamic auto-calibration algorithm to continuously track background noise, mapping analog microphone signals into a zero-latency multi-color VU meter.</p>
+                </div>
+                <div class="dive-box">
+                    <h4>3. Power Optimization & Strapping</h4>
+                    <p>Engineered stable 5V power distribution for addressable WS2812B LEDs and resolved ESP32-C3 strapping pin constraints via custom pull-down logic.</p>
+                </div>
+                <div class="dive-box blue">
+                    <h4>4. Electro-Mechanical Integration</h4>
+                    <p>Integrated capacitive touch surface (TTP223), sound module, and power distribution into a compact physical housing with proper light diffusion.</p>
+                </div>
+            </div>
+
+            <div class="tech-flow-strip">
+                <span class="flow-step"><i class="fa-solid fa-microphone" style="color: var(--accent-cyan);"></i> LM393 Sound In</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step"><i class="fa-solid fa-sliders" style="color: #fbbf24;"></i> Auto-Calibrating DSP</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step"><i class="fa-solid fa-hand-pointer" style="color: #ec4899;"></i> TTP223 Touch State</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step"><i class="fa-solid fa-lightbulb" style="color: var(--accent-green);"></i> WS2812B Dynamic VU</span>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-cell">
+                    <div class="metric-value">ESP32-C3</div>
+                    <div class="metric-title">Core MCU</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">WS2812B</div>
+                    <div class="metric-title">Addressable LEDs</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">Non-Blocking</div>
+                    <div class="metric-title">State Machine</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value">Dynamic DSP</div>
+                    <div class="metric-title">Zero-Lag Response</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Kavishka Alwis • Electronic & Embedded Systems Engineer • Colombo, Sri Lanka</p>
+        </footer>
+    </div>
+
+    <!-- Security Logic: Scraper & Harvesting Bot Protection -->
+    <script>
+        function handleSecureEmail() {
+            const u = "kavishkaalwis0712002";
+            const d = "gmail.com";
+            window.location.href = "mailto:" + u + "@" + d + "?subject=" + encodeURIComponent("Inquiry from Engineering Portfolio");
+        }
+
+        function handleSecurePhone() {
+            const c = "+94";
+            const n = "711635458";
+            window.location.href = "tel:" + c + n;
+        }
+    </script>
+</body>
+
+</html>
