@@ -369,7 +369,7 @@
         <!-- Hero Header -->
         <header>
             <div class="status-badge">
-                <span class="status-dot"></span> Open to Electronic Engineering Internship Opportunities
+                <span class="status-dot"></span> Open to Engineering Internship Opportunities
             </div>
             <h1>Kavishka Alwis</h1>
             <p class="subtitle">Electronics & IoT Undergraduate | Autodesk Fusion 360 CAD | TinyML & Long-Range Telemetry Systems</p>
@@ -490,7 +490,7 @@
             </div>
         </div>
 
-        <!-- Case Study 2: Parametric CAD & 3D Prototyping (WITH BOTH 2D LAYOUT & 3D PRINT IMAGES) -->
+        <!-- Case Study 2: Parametric CAD & 3D Prototyping (WITH ALL 3 CAD & 3D PRINT IMAGES) -->
         <div class="case-card">
             <div class="card-top">
                 <h3>Parametric Enclosures & Precision Prototyping</h3>
@@ -500,11 +500,11 @@
             <div class="deep-dive-grid">
                 <div class="dive-box green">
                     <h4>1. Design Intent & Requirements</h4>
-                    <p>Engineered parametric component housings and precision mounting brackets in Fusion 360 for electro-mechanical hardware assemblies.</p>
+                    <p>Engineered parametric component housings, extruded slide-fit enclosures, and precision mounting brackets in Fusion 360 for electro-mechanical hardware assemblies.</p>
                 </div>
                 <div class="dive-box">
                     <h4>2. Tolerances & Fastener Geometry</h4>
-                    <p>Designed internal threaded bosses, mounting posts, and interlocking guide channels with strict 0.25mm manufacturing clearances for zero-play assembly.</p>
+                    <p>Designed internal threaded bosses, mounting posts, end-cap mating lips, and interlocking guide channels with strict 0.25mm manufacturing clearances for zero-play assembly.</p>
                 </div>
                 <div class="dive-box green">
                     <h4>3. FDM 3D Printing Optimization</h4>
@@ -516,18 +516,24 @@
                 </div>
             </div>
 
-            <!-- Fusion CAD & Print 2-Image Gallery -->
-            <div class="project-gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 24px 0;">
+            <!-- Fusion CAD & Print 3-Image Gallery -->
+            <div class="project-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 24px 0;">
                 <div style="background: #090d16; border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 10px; overflow: hidden;">
-                    <img src="fusion_cad_layout.jpeg" alt="Fusion 360 Internal Layout and Mating Lid" style="width: 100%; height: auto; max-height: 320px; object-fit: contain; background: #000; border-radius: 6px; display: block; margin: 0 auto;">
+                    <img src="fusion_cad_slide_enclosure.jpeg" alt="Extruded Slide Enclosure and Mating End-Cap CAD vs Physical Print" style="width: 100%; height: auto; max-height: 280px; object-fit: contain; background: #000; border-radius: 6px; display: block; margin: 0 auto;">
                     <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; text-align: center; font-family: 'Fira Code', monospace;">
-                        <i class="fa-solid fa-ruler-combined"></i> Parametric CAD Layout: Internal Ribs, Guide Slots & Mating Lid
+                        <i class="fa-solid fa-cube"></i> Slide-Fit Enclosure: CAD Model vs. Precision 3D Print
                     </p>
                 </div>
                 <div style="background: #090d16; border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 10px; overflow: hidden;">
-                    <img src="fusion_cad_prototype.jpeg" alt="CAD Model vs Physical 3D Print" style="width: 100%; height: auto; max-height: 320px; object-fit: contain; background: #000; border-radius: 6px; display: block; margin: 0 auto;">
+                    <img src="fusion_cad_layout.jpeg" alt="Fusion 360 Internal Layout and Mating Lid" style="width: 100%; height: auto; max-height: 280px; object-fit: contain; background: #000; border-radius: 6px; display: block; margin: 0 auto;">
                     <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; text-align: center; font-family: 'Fira Code', monospace;">
-                        <i class="fa-solid fa-cube"></i> Physical Verification: 3D CAD Model vs. Precision FDM Print
+                        <i class="fa-solid fa-ruler-combined"></i> Parametric CAD: Internal Ribs & Guide Slots
+                    </p>
+                </div>
+                <div style="background: #090d16; border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 10px; overflow: hidden;">
+                    <img src="fusion_cad_prototype.jpeg" alt="CAD Model vs Physical 3D Print" style="width: 100%; height: auto; max-height: 280px; object-fit: contain; background: #000; border-radius: 6px; display: block; margin: 0 auto;">
+                    <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; text-align: center; font-family: 'Fira Code', monospace;">
+                        <i class="fa-solid fa-microchip"></i> Physical Verification: CAD vs. Fastener Post Prototype
                     </p>
                 </div>
             </div>
@@ -546,7 +552,7 @@
                     <div class="metric-title">Prototyping Method</div>
                 </div>
                 <div class="metric-cell">
-                    <div class="metric-value">Threaded Boss</div>
+                    <div class="metric-value">Slide & Boss</div>
                     <div class="metric-title">Mechanical Fastening</div>
                 </div>
             </div>
